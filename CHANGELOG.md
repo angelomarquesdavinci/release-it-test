@@ -1,5 +1,7 @@
 
 
+## 0.2.1 (2024-09-11)
+
 ## [0.2.0](https://github.com/angelomarquesdavinci/release-it-test/compare/v0.1.1...v0.2.0) (2024-09-11)
 
 
