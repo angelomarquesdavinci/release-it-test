@@ -1,5 +1,12 @@
 
 
+## 0.2.2 (2024-09-11)
+
+
+### Bug Fixes
+
+* putting hello world in a heading tag ([9ad93a4](https://github.com/angelomarquesdavinci/release-it-test/commit/9ad93a4657a02c45cbc405d2b8ffcfbcbff5f547))
+
 ## 0.2.1 (2024-09-11)
 
 ## [0.2.0](https://github.com/angelomarquesdavinci/release-it-test/compare/v0.1.1...v0.2.0) (2024-09-11)
