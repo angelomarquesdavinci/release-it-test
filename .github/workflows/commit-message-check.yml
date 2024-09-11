@@ -2,8 +2,7 @@ name: Commit Message Check
 
 on:
   push:
-    branches:
-      - "*" # Run the workflow only when commits are pushed to the main branch
+    branches: [release/**, feat/**, fix/**]
 
 jobs:
   check-commits:
