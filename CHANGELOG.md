@@ -1,5 +1,12 @@
 
 
+## 0.2.3 (2024-09-11)
+
+
+### Bug Fixes
+
+* turning server component into client component ([ded4475](https://github.com/angelomarquesdavinci/release-it-test/commit/ded44756ff93afca79f22f8c76c3f27bfe8262c2))
+
 ## 0.2.2 (2024-09-11)
 
 
