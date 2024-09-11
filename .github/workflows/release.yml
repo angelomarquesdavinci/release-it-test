@@ -15,8 +15,13 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build
-      # - run: npm run release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Initialize Git user
+        run: |
+          git config --global user.email "angelo@davinciambiental.com.br"
+          git config --global user.name "Angelo Marques"
+      - name: Release
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: End message
         run: echo "Done!"
