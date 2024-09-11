@@ -1,0 +1,36 @@
+name: Commit Message Check
+
+on:
+  push:
+    branches:
+      - main # Run the workflow only when commits are pushed to the main branch
+
+jobs:
+  check-commits:
+    name: Check Commit Messages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch the full history to check all commits
+
+      - name: Get list of commit messages
+        id: commits
+        run: |
+          # Get commit messages for this push (all commits not in origin/main)
+          git fetch origin main
+          git log --pretty=format:"%s" origin/main..HEAD > commit_messages.txt
+          echo "Commit messages from the push:"
+          cat commit_messages.txt
+
+      - name: Check commit messages follow conventional commits
+        run: |
+          # Check if at least one commit starts with 'fix:' or 'feat:'
+          if grep -Eq "^(fix|feat):" commit_messages.txt; then
+            echo "At least one commit message follows the Conventional Commits pattern."
+          else
+            echo "Error: No commit message starts with 'fix:' or 'feat:'."
+            exit 1  # Fail the job if no valid commit message is found
+          fi
