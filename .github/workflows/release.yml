@@ -33,8 +33,8 @@ jobs:
 
       - name: Initialize Git user
         run: |
-          git config --global user.email "angelo@davinciambiental.com.br"
-          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${{ github.event.head_commit.committer.name }}"
+          git config --global user.name "${{ github.event.head_commit.committer.email }}"
 
       - name: Release
         run: npm run release --ci
