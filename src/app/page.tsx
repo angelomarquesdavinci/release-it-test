@@ -14,6 +14,7 @@ export default function HomePage() {
       <input type="text" />
 
       <span>Lorem ipsum dolor sit amet consectetur.</span>
+      <span>Lorem ipsum dolor sit amet consectetur.</span>
     </div>
   );
 }
