@@ -20,7 +20,7 @@ jobs:
           git config --global user.email "angelo@davinciambiental.com.br"
           git config --global user.name "Angelo Marques"
       - name: Release
-        run: npm run release
+        run: npm run release --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: End message
