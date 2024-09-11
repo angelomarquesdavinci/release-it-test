@@ -2,7 +2,7 @@ name: Commit Message Check
 
 on:
   push:
-    branches: [release/**, feat/**, fix/**]
+    branches: [release/**, feat/**, fix/**, main]
 
 jobs:
   check-commits:
