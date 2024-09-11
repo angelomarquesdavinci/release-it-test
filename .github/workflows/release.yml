@@ -3,31 +3,33 @@ on:
   push:
     branches:
       - main
+
 jobs:
   release:
     name: Release
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          persist-credentials: false
+
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+
       - run: npm ci
+
       - run: npm run build
+
       - name: Initialize Git user
         run: |
           git config --global user.email "angelo@davinciambiental.com.br"
-          git config --global user.name "Angelo Marques"
+          git config --global user.name "${GITHUB_ACTOR}"
+
       - name: Release
         run: npm run release --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: End message
         run: echo "Done!"
