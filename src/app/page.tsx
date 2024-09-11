@@ -12,7 +12,7 @@ export default function HomePage() {
       <button onClick={() => setCount(count + 1)}>Click me</button>
       <p>You clicked the button {count} times.</p>
 
-      <input type="text" />
+      <input type="text" name="name" placeholder="Name" />
     </div>
   );
 }
