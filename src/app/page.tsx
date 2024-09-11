@@ -11,6 +11,11 @@ export default function HomePage() {
 
       <button onClick={() => setCount(count + 1)}>Click me</button>
       <p>You clicked the button {count} times.</p>
+
+      <input type="text" name="username" placeholder="Username" />
+
+      <span>Lorem ipsum dolor sit amet consectetur.</span>
+      <span>Lorem ipsum dolor sit amet consectetur.</span>
     </div>
   );
 }
