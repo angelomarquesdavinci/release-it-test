@@ -12,6 +12,8 @@ export default function HomePage() {
       <p>You clicked the button {count} times.</p>
 
       <input type="text" />
+
+      <span>Lorem ipsum dolor sit amet consectetur.</span>
     </div>
   );
 }
