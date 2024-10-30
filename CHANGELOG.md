@@ -1,5 +1,12 @@
 
 
+## 1.1.0 (2024-10-30)
+
+
+### Features
+
+* submit button ([1256047](https://github.com/angelomarquesdavinci/release-it-test/commit/1256047368d73d6c16b9aabaf6184d6d77247ed7))
+
 ## 1.0.0 (2024-09-11)
 
 
