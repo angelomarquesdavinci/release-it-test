@@ -1,5 +1,16 @@
 
 
+## 1.0.0 (2024-09-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* name for the input
+
+### Features
+
+* name and placeholder for the input ([d0f7e1d](https://github.com/angelomarquesdavinci/release-it-test/commit/d0f7e1d3b67b3a25264e4f7d05f3a70ad470b4ea))
+
 ## 0.2.4 (2024-09-11)
 
 ## 0.2.3 (2024-09-11)
