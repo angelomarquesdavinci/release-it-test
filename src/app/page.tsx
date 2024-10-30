@@ -13,6 +13,8 @@ export default function HomePage() {
       <p>You clicked the button {count} times.</p>
 
       <input type="text" name="name" placeholder="Name" />
+
+      <button type="submit">Submit</button>
     </div>
   );
 }
