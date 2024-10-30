@@ -31,6 +31,9 @@ jobs:
 
       - run: npm run build
 
+      - name: Unit tests
+        run: npm run test
+
       - name: Initialize Git user
         run: |
           git config --global user.email "${{ github.event.head_commit.committer.name }}"
