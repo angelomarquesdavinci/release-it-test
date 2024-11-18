@@ -39,10 +39,10 @@ jobs:
           git config --global user.email "${{ github.event.head_commit.committer.name }}"
           git config --global user.name "${{ github.event.head_commit.committer.email }}"
 
-      - name: Release
-        run: npm run release --ci
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Release
+      #   run: npm run release --ci
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: End message
         run: echo "Done!"
