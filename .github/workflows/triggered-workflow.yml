@@ -1,0 +1,48 @@
+name: Triggered Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-from-other-repo]
+
+jobs:
+  release:
+    name: Release
+    # with:
+    #   fetch-depth: 0
+    #   persist-credentials: false
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: webiny/action-conventional-commits@v1.3.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Optional, for private repositories.
+          allowed-commit-types: "feat,fix" # Optional, set if you want a subset of commit types to be allowed.
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Initialize Git user
+        run: |
+          git config --global user.email "${{ github.event.head_commit.committer.name }}"
+          git config --global user.name "${{ github.event.head_commit.committer.email }}"
+
+      - name: Release
+        run: npm run release --ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: End message
+        run: echo "Done!"
